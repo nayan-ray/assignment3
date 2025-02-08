@@ -4,43 +4,42 @@ import "./dash.css";
 import DashItem from "./DashItem";
 import Title from "./Title";
 import BlogStore from "../../store/blog";
+import { Link } from "react-router-dom";
 
 const DashLay = () => {
-    const {blogPosts}= BlogStore();
-    console.log(blogPosts)
-  
-    return (
-        <div>
-          <div className="container-fluid">
-            <div className="row pe-5">
-                <Title type={"blog"}/>
-            </div>
-            <div className="row">
-              <div className="col-3 bg-info">
-                <ul className="list-group">
-                  <li className="list-group-item ">Blog</li>
-                  <li className="list-group-item">Team</li>
-                  <li className="list-group-item">Service</li>             
-                </ul>
-              </div>
-              <div className="col-9 bg-secondary">
-                <div className="dash-container">
-                  
-                  {blogPosts.map((post, index) => (
-                    <DashItem key={index} post={post} />
-                    ))}
-                    
-                  
-                </div>
-              </div>
+  const { blogPosts } = BlogStore();
+  console.log(blogPosts);
+
+  return (
+    <div>
+      <div className="container-fluid">
+        <div className="row pe-5">
+          <Title type={"blog"} />
+        </div>
+        <div className="row">
+          <div className="col-3 bg-info">
+            <ul className="list-group">
+              <li className="list-group-item ">
+                <Link to="/dashboard" className=" text-decoration-none">
+                  <span className="nav-link">Blog</span>
+                </Link>
+              </li>
+              <li className="list-group-item">Team</li>
+              <li className="list-group-item">Service</li>
+            </ul>
+          </div>
+          <div className="col-9 bg-secondary">
+            <div className="dash-container">
+              {blogPosts.map((post, index) => (
+                <DashItem key={index} post={post} />
+              ))}
             </div>
           </div>
-          <Footer />
         </div>
-      );
-  
-
-  
+      </div>
+      <Footer />
+    </div>
+  );
 };
 
 export default DashLay;

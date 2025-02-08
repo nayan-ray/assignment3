@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import BlogStore from "../../store/blog";
-import {useNavigate} from "react-router-dom";
+
 
 
 const Title = ({ type }) => {
     const [title, setTitle]  = useState('');
     const [description, setDescription]  = useState('');
-    const navigate = useNavigate();
+    
     const {setBlogPost, getBlogPosts} = BlogStore();
     console.log(title)
 
@@ -25,11 +25,12 @@ const Title = ({ type }) => {
       {/* Button trigger modal */}
       <h1
         type="button"
-        className=" text-end fs-2 my-3 "
+        className=" text-end fs-2 my-3 py-3 bg-success"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+
       >
-        Create {type}
+       Tap To Create {type}
       </h1>
       <>
         {/* Modal */}
