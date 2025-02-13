@@ -10,6 +10,8 @@ const Dashboard = () => {
        (
           async()=>{
              await getBlogPosts();
+             console.log("dashboard page");
+             
              
           }
        )();

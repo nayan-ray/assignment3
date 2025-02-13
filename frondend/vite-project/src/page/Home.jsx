@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout/Layout'
 import Footer from '../components/Layout/Footer'
 import Hero from '../components/hero/Hero'
 import ListContainer from '../components/listContainer/ListContainer'
 
 const Home = () => {
+
+  useEffect(()=>{
+    (
+      async()=>{
+         console.log("Home page")
+      }
+    )();
+  }, []);
+
   return (
     <div>
         <Hero />

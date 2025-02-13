@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Layout/Footer";
 import "./page.css"
 import ListContainer from "../components/listContainer/ListContainer";
 
 const About = () => {
+
+  useEffect(()=>{
+    (
+      async()=>{
+         console.log("about page")
+      }
+    )();
+  }, []);
+
+
   return (
     <div>
       <div className="body-section">

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Layout/Footer";
+import Cookies from 'js-cookie';
 
 const Contack = () => {
+
+  useEffect(()=>{
+    (
+      async()=>{
+        console.log(Cookies.get("access_token"));
+      }
+    )();
+  }, []);
+
   return (
     <div>
       <div className="contact-body">

@@ -10,6 +10,8 @@ const Blog = () => {
           (
             async()=>{
                await getBlogPosts();
+               console.log("blog page");
+               
             }
           )();
   }, [])
