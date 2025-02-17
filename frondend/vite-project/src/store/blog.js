@@ -30,7 +30,7 @@ const BlogStore = create((set) => ({
 
     updatePost : async (id, postBody)=>{
         try {
-            const response = await axios.put(`http://localhost:3002/api/v1/blog/${id}`, postBody, {headers : {'Content-Type': 'application/json'}});
+            const response = await axios.put(`http://localhost:3002/api/v1/blog/${id}`, postBody, {headers : {'Content-Type': 'application/json'}, withCredentials : true});
             if(response.data.message === "success"){
                 return true
             }
